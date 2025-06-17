@@ -16,14 +16,14 @@ volume = 0.5
 last_action_time = time.time()
 delay = 2
 
-pygame.mixer.music.load(os.path.join(music_folder, playlist[current_song]))
-pygame.mixer.music.set_volume(volume)
-pygame.mixer.music.play()
-
 # Init webcam and hand detector
 cap = cv2.VideoCapture(0)
 detector = HandDetector(detectionCon=0.8, maxHands=1)
 last_gesture = -1
+
+pygame.mixer.music.load(os.path.join(music_folder, playlist[current_song]))
+pygame.mixer.music.set_volume(volume)
+pygame.mixer.music.play()
 
 while True:
     success, frame = cap.read()
